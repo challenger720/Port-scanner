@@ -1,0 +1,8 @@
+import socket
+
+for port in range(1,1025):
+  sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  ports = ('127.0.0.1', port)
+  if sock.connect_ex(ports) == 0:
+    print("Port %d is open" % port)
+  sock.close()
